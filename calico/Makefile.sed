@@ -33,3 +33,5 @@ deploy: cp sed
 clean:
 	@kubectl delete -f ./manifest/.
 	@find ./manifest -type f -name "*.yaml" | xargs rm -f
+
+expire: cp sed clean
