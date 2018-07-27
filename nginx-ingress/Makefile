@@ -1,6 +1,6 @@
 all: deploy
 
-deploy: export OPS=${OPS}
+deploy: export OPS=create
 deploy:
 	-@kubectl ${OPS} -f ./namespace.yaml
 	@kubectl ${OPS} -f ./rbac.yaml

@@ -1,4 +1,4 @@
-COMPONENT="dashborad"
+COMPONENT="dashboard"
 
 all: deploy
 
