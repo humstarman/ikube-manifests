@@ -14,7 +14,7 @@ link: deploy
 check:
 	@./scripts/mk-ansible-hosts.sh -i ${IP} -g ${TMP} -o
 	@ansible ${TMP} -m ping 
-	@ansible ${TMP} -m script -a ./check-docker.sh 
+	@ansible ${TMP} -m script -a ./scripts/check-docker.sh 
 	@./scripts/rm-ansible-group.sh -g ${TMP}
 
 cp:
