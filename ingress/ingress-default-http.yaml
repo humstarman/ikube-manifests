@@ -1,0 +1,38 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: http-ingress
+spec:
+  rules:
+  - host: my.k8s.me
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: file-server
+          servicePort: 80 
+  - host: my.prom.me
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: prom-all-in-one 
+          servicePort: 9090 
+  - host: my.gra.me
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: prom-all-in-one 
+          servicePort: 3000 
+  - host: my.nginx.me
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: nginx-ds 
+          servicePort: 80 
+      - path: /hi
+        backend:
+          serviceName: nginx-ds 
+          servicePort: 80 

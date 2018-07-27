@@ -1,0 +1,28 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: my-k8s-ingress
+  namespace: datacentre
+spec:
+  rules:
+  - host: my.block.me
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: demo-proxy 
+          servicePort: 8080
+  - host: my.demo1.me
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: demo1-proxy 
+          servicePort: 8080
+  - host: my.demo3.me
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: demo3-proxy 
+          servicePort: 8080

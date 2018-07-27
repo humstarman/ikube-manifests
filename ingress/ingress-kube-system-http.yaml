@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: http-ingress
+  namespace: kube-system 
+spec:
+  rules:
+  - host: my.grafana.me
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: monitoring-grafana
+          servicePort: 80
+  - host: my.ki.me
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: kibana-logging 
+          servicePort: 5601 

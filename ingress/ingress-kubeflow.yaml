@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: my-k8s-ingress
+  namespace: kubeflow
+spec:
+  rules:
+  - host: my.kubeflow.me
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: tf-hub-lb
+          servicePort: 80

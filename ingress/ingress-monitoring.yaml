@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: my-k8s-ingress
+  namespace: monitoring 
+spec:
+  rules:
+  - host: my.prom-core.me
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: prometheus 
+          servicePort: 9090
+  - host: my.prom-gra.me
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: grafana 
+          servicePort: 3000

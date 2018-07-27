@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: my-k8s-ingress
+  namespace: gitlab
+spec:
+  rules:
+  - host: my.gitlab.me
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: gitlab-cl
+          servicePort: 80
